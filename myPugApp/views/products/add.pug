@@ -1,0 +1,12 @@
+extends ../layout
+
+block content 
+    form(action="/products/add", method="post") 
+        .form-group 
+            label(for="name") Product Name
+            input#name.form-control(type="text", name="name")     
+        .form-group 
+            label(for="details") details
+            input#details.form-control(type="text", name="details")
+        input(type="submit", class="btn btn-success")
+

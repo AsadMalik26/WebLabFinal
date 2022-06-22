@@ -1,0 +1,29 @@
+extends ../layout
+
+block content 
+    .row
+        .col-sm-8
+            h1=title + " - FA19-BSE-080 Web Terminal"
+        .col-sm-4
+            a(href="/products/add", class="btn btn-success float-right") Add New Product 
+    table.table 
+        thead 
+            tr 
+                th No. 
+                th Image 
+                th Name 
+                th details  
+                th Actions 
+        tbody
+            each product in products 
+                tr 
+                    td=i++
+                    td <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple111/v4/dd/95/7e/dd957e3a-abd3-da8a-2211-726a67108938/source/256x256bb.jpg" alt="Dynamic Img From a URL" width="70" height="50">
+                    td=product.name 
+                    td=product.details  
+                    td
+                        a(href="/products/edit/"+product._id, class="btn btn-primary disabled") Show 
+                        a(href="/products/edit/"+product._id, class="btn btn-primary") Edit 
+                        a(href="/products/delete/"+product._id, class="btn btn-danger") Delete 
+
+    
