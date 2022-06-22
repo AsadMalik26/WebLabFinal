@@ -21,12 +21,10 @@ router.get("/", async function (req, res, next) {
   let products = await productModal.find();
   var i = 1;
   res.render("products/list", { title: "Products List", products, i });
-  // res.send("I am in products.js");
 });
 //store data
 router.get("/add", async function (req, res, next) {
   res.render("products/add");
-  // res.send("I am in products.js");
 });
 router.post("/add", async function (req, res, next) {
   let product = new productModal();
